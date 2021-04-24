@@ -10,7 +10,9 @@
     "start": "node server.js"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "sequelize-cli": "^6.2.0",
+    "bcrypt": "^5.0.1"
   },
   "engines": {
     "node": "12.x"
