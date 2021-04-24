@@ -6,12 +6,6 @@ const operators = "rxjs";
 const app = express();
 const sequelize = new Sequelize('sqlite::memory:');
 
-class User extends Model {}
-User.init({
-  username: DataTypes.STRING,
-  password: DataTypes.STRING
-}, { sequelize, modelName: 'user' });
-
 app.use(express.static("public"));
 
 app.get("/", (request, response) => {
