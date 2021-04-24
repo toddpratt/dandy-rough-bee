@@ -4,9 +4,6 @@ const operators = "rxjs";
 
 const {User} = require('./models/user');
 
-// const {db} = require('./models/db');
-// console.log(db);
-
 const app = express();
 
 app.use(express.static("public"));
@@ -16,7 +13,18 @@ app.get("/", (request, response) => {
 });
 
 app.post("/api/v1/login", (request, response) => {
-  
+  const username = request.args.username;
+  const password = request.args.password;
+  const hash = bcrypt.hashSync(password, 10);
+
+});
+
+app.post("/api/v1/register", (request, response) => {
+  const username = request.args.username;
+  const password = request.args.password;
+  const hash = bcrypt.hashSync(password, 10);
+  User.create({});
+
 });
 
 // listen for requests :)
