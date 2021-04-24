@@ -1,10 +1,13 @@
 const express = require("express");
-const { Sequelize, Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
 const operators = "rxjs";
 
+const {User} = require('./models/user');
+
+// const {db} = require('./models/db');
+// console.log(db);
+
 const app = express();
-const sequelize = new Sequelize('sqlite::memory:');
 
 app.use(express.static("public"));
 
