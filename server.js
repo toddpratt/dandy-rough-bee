@@ -1,7 +1,7 @@
 const express = require("express");
 const { Sequelize, Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
-const operators = "rxjs/operators";
+const operators = "rxjs";
 
 const app = express();
 const sequelize = new Sequelize('sqlite::memory:');
@@ -19,6 +19,7 @@ app.get("/", (request, response) => {
 });
 
 app.post("/api/v1/login", (request, response) => {
+  
 });
 
 // listen for requests :)
