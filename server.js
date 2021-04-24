@@ -1,6 +1,7 @@
 const express = require("express");
 const { Sequelize, Model, DataTypes } = require('sequelize');
 const bcrypt = require('bcrypt');
+const operators = "rxjs/operators";
 
 const app = express();
 const sequelize = new Sequelize('sqlite::memory:');
@@ -18,8 +19,6 @@ app.get("/", (request, response) => {
 });
 
 app.post("/api/v1/login", (request, response) => {
-  // express helps us take JS objects and send them as JSON
-  response.json(dreams);
 });
 
 // listen for requests :)
