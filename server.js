@@ -37,7 +37,7 @@ app.post("/api/v1/login", async (request, response) => {
     } else if (users.length === 0) {
         response.sendStatus(401);
     } else {
-        response.sendStatus(500);
+        response.sendStatus(500);  // should never happen
     }
 });
 
