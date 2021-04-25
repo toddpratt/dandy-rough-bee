@@ -4,8 +4,12 @@ const {db} = require('./db');
 
 class User extends Model {}
 User.init({
-  username: DataTypes.STRING,
-  password: DataTypes.STRING
+  email: {
+    type: DataTypes.TEXT,
+    allowNull: false,
+    unique: true
+  },
+  hash: DataTypes.STRING
 }, { sequelize: db, modelName: 'user' });
 
 exports.User = User;
