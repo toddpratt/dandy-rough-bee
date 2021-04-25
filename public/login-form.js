@@ -23,7 +23,9 @@ Vue.component('login-form', {
                 })
             });
             const data = await response.json();
-            console.log(data);
+            app.user_id = data.user_id;
+            app.token = data.token;
+            app.page = 'home';
         }
     }
 });

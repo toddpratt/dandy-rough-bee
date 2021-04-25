@@ -1,6 +1,6 @@
 Vue.component('register-form', {
     template: `
-        <form v-if="success !== true">
+        <form>
             <label for="email">email</label>
             <input id="email" type="text" v-model="email" placeholder="E-Mail">
             <label for="password1">Password</label>
@@ -10,7 +10,7 @@ Vue.component('register-form', {
             <div v-if="password1 !== password2" class="error">Passwords Must Match!</div>
             <button type="button" v-on:click="submit">Register</button>
         </form>
-        <div v-if="success">
+        <div>
             <div>Registration Succeeded!</div>
             <login-form></login-form>
         </div>
@@ -33,8 +33,7 @@ Vue.component('register-form', {
                     })
                 });
                 const data = await response.json();
-                console.log(data);
-                this.success = true;
+                app.page = 'login';
             }
         }
     }
