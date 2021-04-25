@@ -1,18 +1,19 @@
 const express = require("express");
-const bcrypt = require('bcrypt');
 const bodyParser = require('body-parser');
+
+const bcrypt = require('bcrypt');
 const jwt = require('express-jwt');
-const {UniqueConstraintError} = require("sequelize");
+const jsonwebtoken = require('jsonwebtoken');
+
 const {db} = require('./models/db');
 const {User} = require('./models/user');
-const jsonwebtoken = require('jsonwebtoken');
+const {UniqueConstraintError} = require("sequelize");
 
 db.sync();
 
 const app = express();
-
-app.use(express.static("public"));
 app.use(bodyParser.json());
+app.use(express.static("public"));
 
 app.get("/", (request, response) => {
     response.sendFile(__dirname + "/views/index.html");

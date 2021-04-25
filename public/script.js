@@ -1,1 +1,6 @@
-console.log("start setting up client-side appliation.")
+var app = new Vue({
+  el: '#app',
+  data: {
+    message: 'Hello Vue!'
+  }
+})
