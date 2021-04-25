@@ -31,7 +31,7 @@ app.post("/api/v1/login", async (request, response) => {
         const user = users[0];
         if (await bcrypt.compare(password, user.get('hash'))) {
             const token = jsonwebtoken.sign({userId: user.get('id')}, process.env.SECRET, { expiresIn: '1800s' });
-            response.json({token});
+            response.json({token, userId: user.get('id')});
         } else {
             response.sendStatus(401);
         }

@@ -8,9 +8,13 @@
 </head>
 <body>
     <div id="app">
-        <login-form></login-form>
+        <a href="#" v-on:click="page='login'">Login</a>
+        <a href="#" v-on:click="page='register'">Register</a>
+        <register-form v-if="page === 'register'"></register-form>
+        <login-form v-if="page === 'login'"></login-form>
     </div>
+    <script src="/register-form.js"></script>
     <script src="/login-form.js"></script>
-    <script src="/script.js"></script>
+    <script src="/app.js"></script>
 </body>
 </html>

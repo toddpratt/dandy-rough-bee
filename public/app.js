@@ -2,6 +2,7 @@
 const app = new Vue({
   el: '#app',
   data: {
-      token: null
+      token: null,
+      page: 'login'
   }
 })
