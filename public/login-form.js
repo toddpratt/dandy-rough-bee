@@ -1,12 +1,14 @@
 Vue.component('login-form', {
     template: `
-        <form>
-            <input type="text" v-model="email" placeholder="email">
-            <input type="password" v-model="password" placeholder="password">
-            <button type="button" v-on:click="submit">Login</button>
-        </form>
-        <div class="error" v-if="error != null">
-            {{error}}
+        <div>
+            <form>
+                <input type="text" v-model="email" placeholder="email">
+                <input type="password" v-model="password" placeholder="password">
+                <button type="button" v-on:click="submit">Login</button>
+            </form>
+            <div class="error" v-if="error != null">
+                {{error}}
+            </div>
         </div>
     `,
     data: () => ({
