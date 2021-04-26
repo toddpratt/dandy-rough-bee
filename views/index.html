@@ -8,16 +8,18 @@
 </head>
 <body>
     <div id="app">
-        <div class="no-auth-nav" v-if="token === null">
-            <a href="#" v-on:click="page='login'">Login</a>
-            <a href="#" v-on:click="page='register'">Register</a>
+        <div>
+            <div class="no-auth-nav" v-if="token === null">
+                <a href="#" v-on:click="page='login'">Login</a>
+                <a href="#" v-on:click="page='register'">Register</a>
+            </div>
+            <div class="auth-nav" v-else>
+                <a href="#" v-on:click="token = null">Logout</a>
+            </div>
+            <register-form v-if="page === 'register'"></register-form>
+            <login-form v-else-if="page === 'login'"></login-form>
+            <home v-else-if="page === 'home'"></home>
         </div>
-        <div class="auth-nav" v-else>
-            <a href="#" v-on:click="token = null">Logout</a>
-        </div>
-        <register-form v-if="page === 'register'"></register-form>
-        <login-form v-else-if="page === 'login'"></login-form>
-        <home v-else-if="page === 'home'"></home>
     </div>
     <script src="/home.js"></script>
     <script src="/register-form.js"></script>
